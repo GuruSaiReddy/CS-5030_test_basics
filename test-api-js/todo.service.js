@@ -1,7 +1,7 @@
 class todoservice{
     todo_data = {
         "todo":[{
-            "title": "T1",
+            "title": "T0",
             "description": "D1",
             "done": false
         },{
@@ -9,7 +9,7 @@ class todoservice{
             "description": "D1",
             "done": false
         },{
-            "title": "T1",
+            "title": "T2",
             "description": "D1",
             "done": false
         }]
@@ -24,14 +24,20 @@ class todoservice{
 
     add_todo(todo){
         // Your code here
+        this.todo_data.todo.push(todo)
+    }   
+
+    delete_todo(title){
+        // Your code here
+        const t = this.todo_data.todo.findIndex((o)=>o.title == title)
+        this.todo_data.todo.splice(t,1)
+
     }
 
-    delete_todo(id){
+    update_todo(title, todo){
         // Your code here
-    }
-
-    update_todo(id, todo){
-        // Your code here
+        const t = this.todo_data.todo.findIndex((o)=>o.title === title)
+        this.todo_data.todo.splice(t,1,todo)
     }
 }
 
