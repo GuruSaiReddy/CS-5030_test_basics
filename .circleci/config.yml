@@ -29,7 +29,7 @@ jobs:
            name: run tests
            command: cd test_javascript && npm run test
 
-   assign:
+  assign:
      docker:
        - image: cimg/node:14.20.0
      steps:
