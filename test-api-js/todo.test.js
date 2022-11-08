@@ -20,25 +20,27 @@ describe('todo test suite', () => {
     });
 
 
-    // Write all your test cases here that corresponds to software requirements
-    test("Add-todo", () => {
-        todo_service.add_todo({"title": "T3",
-        "description": "T3",
-        "done": false})
-        expect(todo_service.get_todos().todo.length).toEqual(4);
-    });   
+        test("Update", () => { 
+        expect(todo_service.update_todo("T0",{"title":"updated"})).toEqual({"title":"updated"});
+        expect(todo_service.get_todos().todo.length).toEqual(3);
+    }) 
 
+     
     test("Delete", () => {
         todo_service.delete_todo("T3")
-        expect(todo_service.get_todos().todo.length).toEqual(3);
+        expect(todo_service.get_todos().todo.length).toEqual(2);
+       
     })
 
-    test("Update", () => {
-        todo_service.update_todo("T0", {
-            "title": "T3",
-        "description": "T3",
-        "done": true
-    })
+    
+    test("Add-todo", () => {
+        todo_service.add_todo({"title": "Guru",
+        "description": "D4",
+        "done": true})
         expect(todo_service.get_todos().todo.length).toEqual(3);
-    })
+    });   
+
+   
+
+   
 });

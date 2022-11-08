@@ -6,11 +6,11 @@ class todoservice{
             "done": false
         },{
             "title": "T1",
-            "description": "D1",
+            "description": "D2",
             "done": false
         },{
             "title": "T2",
-            "description": "D1",
+            "description": "D3",
             "done": false
         }]
     }
@@ -24,20 +24,27 @@ class todoservice{
 
     add_todo(todo){
         // Your code here
-        this.todo_data.todo.push(todo)
+        this.todo_data.todo.push(todo);
     }   
 
     delete_todo(title){
         // Your code here
-        const t = this.todo_data.todo.findIndex((o)=>o.title == title)
-        this.todo_data.todo.splice(t,1)
+        const deleteItem = this.todo_data.todo.findIndex((i)=>i.title == title)
+        this.todo_data.todo.splice(deleteItem,1)
+
 
     }
 
     update_todo(title, todo){
         // Your code here
-        const t = this.todo_data.todo.findIndex((o)=>o.title === title)
-        this.todo_data.todo.splice(t,1,todo)
+        const updateItem = this.todo_data.todo.findIndex((i)=>i.title === title)
+        this.todo_data.todo.splice(updateItem,1,todo)
+             
+        var result= this.todo_data.todo.find(obj =>{
+            return obj.title === "updated";
+        });
+        return result;
+    
     }
 }
 
