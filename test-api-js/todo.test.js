@@ -39,6 +39,11 @@ describe('todo test suite', () => {
         "description": "D4",
         "done": true})
         expect(todo_service.get_todos().todo.length).toEqual(3);
+        expect(todo_service.add_todo({"title": "PSD",
+        "description": "D4",
+        "done": true})).toEqual({"title":"PSD","description": "D4",
+        "done": true});
+        expect(todo_service.get_todos().todo.length).toEqual(4);
     });   
 
    

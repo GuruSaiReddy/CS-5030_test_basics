@@ -25,6 +25,10 @@ class todoservice{
     add_todo(todo){
         // Your code here
         this.todo_data.todo.push(todo);
+        var result1= this.todo_data.todo.find(obj =>{
+            return obj.title === "PSD";
+        });
+        return result1;
     }   
 
     delete_todo(title){
